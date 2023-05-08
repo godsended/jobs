@@ -1,6 +1,10 @@
 import AuthorisationStorage from "./Interfaces/AuthorisationStorage";
 
-class LocalStorageAuthorisationStorage implements AuthorisationStorage {
+export default class LocalStorageAuthorisationStorage implements AuthorisationStorage {
+    getTokenType(): string {
+        return localStorage.getItem("tokenType") ?? "";
+    }
+
     getAccessToken(): string {
         return localStorage.getItem("accessToken") ?? "";
     }
@@ -17,4 +21,7 @@ class LocalStorageAuthorisationStorage implements AuthorisationStorage {
         localStorage.setItem("refreshToken", token);
     }
 
+    setTokenType(type: string): void {
+        localStorage.setItem("tokenType", type);
+    }
 }

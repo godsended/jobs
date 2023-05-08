@@ -4,6 +4,7 @@ interface AuthenticationStorage {
     getClientId(): string;
     getClientSecret(): string;
     getHr(): string;
+    getSecretKey(): string;
 }
 
 export default AuthenticationStorage;

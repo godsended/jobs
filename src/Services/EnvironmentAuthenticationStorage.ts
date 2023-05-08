@@ -1,6 +1,10 @@
 import AuthenticationStorage from "./Interfaces/AuthenticationStorage";
 
 class EnvironmentAuthenticationStorage implements AuthenticationStorage {
+    getSecretKey(): string {
+        return process.env.REACT_APP_SECRET_KEY ?? "";
+    }
+
     getClientId(): string {
         return process.env.REACT_APP_CLIENT_ID ?? "";
     }

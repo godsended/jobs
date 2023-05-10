@@ -3,7 +3,7 @@ import LocalStorageAuthorisationStorage from "./Services/LocalStorageAuthorisati
 import AuthenticationStorage from "./Services/Interfaces/AuthenticationStorage";
 import EnvironmentAuthenticationStorage from "./Services/EnvironmentAuthenticationStorage";
 
-const authorisationStorage: AuthorisationStorage = new LocalStorageAuthorisationStorage();
+const authorizationStorage: AuthorisationStorage = new LocalStorageAuthorisationStorage();
 const authenticationStorage: AuthenticationStorage = new EnvironmentAuthenticationStorage();
 
-export {authorisationStorage, authenticationStorage}
+export {authorizationStorage, authenticationStorage}

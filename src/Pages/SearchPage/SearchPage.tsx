@@ -1,12 +1,18 @@
 import React from "react";
 import Filter from "../../Components/Filter/Filter";
-import {Box} from "@mantine/core";
+import {Container, Flex} from "@mantine/core";
+import VacancySearch from "../../Components/VacancySearch/VacancySearch";
+import VacanciesList from "../../Components/VacanciesList/VacanciesList";
 
 function SearchPage() {
     return(
-        <Box bg={"rgb(245, 245, 246)"}>
+        <Flex>
             <Filter/>
-        </Box>
+            <Container>
+                <VacancySearch/>
+                <VacanciesList/>
+            </Container>
+        </Flex>
     );
 }
 

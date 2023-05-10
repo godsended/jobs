@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Auth from "./Components/Auth/Auth";
+import Auth from "./Components/Auth";
 import SearchPage from "./Pages/SearchPage/SearchPage";
 import {AppShell, Center, Container, Header} from "@mantine/core";
 import HeaderContent from "./Components/HeaderContent/HeaderContent";
@@ -8,6 +8,9 @@ import HeaderContent from "./Components/HeaderContent/HeaderContent";
 function App() {
     return (
         <AppShell
+            styles={(theme) => ({
+                main: {backgroundColor: "rgb(247, 247, 248)"}
+            })}
             header={<Header height={84}>{
                 <Container px={"xs"} m={"auto"} h={"inherit"}>
                     <Center h={"inherit"}>

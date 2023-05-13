@@ -4,8 +4,8 @@ import {NumberInput, Title} from "@mantine/core";
 interface StyledNumberInputData {
     placeholder?: string;
     label?: React.ReactNode;
-    value?: number;
-    onChange?: (value: number) => void;
+    value?: number | "";
+    onChange?: React.Dispatch<number | "">;
     min?: number;
     max?: number;
 }
@@ -19,6 +19,7 @@ function StyledNumberInput(data: StyledNumberInputData) {
             onChange={data.onChange}
             min={data.min}
             max={data.max}
+            step={1000}
             radius="8px"
             styles={{
                 controlUp: {

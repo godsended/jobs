@@ -1,6 +1,5 @@
 class Vacancy {
     vacancyId : number = null!;
-    profession: string | null = null;
     firmName: string | null = null;
     town: string | null = null;
     catalogueTitle: string | null = null;

@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d0fb8c9-026f-47f0-902c-116427eef22e" name="Changes" comment="" />
+    <list default="true" id="3d0fb8c9-026f-47f0-902c-116427eef22e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/Search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/loc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/PaymentText.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/VacanciesFetchLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/VacancyItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/VacancySearch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/VacanciesList/VacanciesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacanciesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/VacancySearch/VacancySearch.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Vacancy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Vacancy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/SearchPage/SearchPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SearchPage/SearchPage.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -34,26 +48,26 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/ilakolesnikov/WebstormProjects/jobs/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/ilakolesnikov/WebstormProjects/jobs/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/Services/" />
       <recent name="$PROJECT_DIR$/src/Services" />
       <recent name="$PROJECT_DIR$/src/Components/Auth" />
@@ -81,6 +95,7 @@
       <workItem from="1683217796225" duration="3226000" />
       <workItem from="1683293804298" duration="7622000" />
       <workItem from="1683445781883" duration="39547000" />
+      <workItem from="1683832259016" duration="44737000" />
     </task>
     <servers />
   </component>

@@ -6,23 +6,32 @@ import Industry from "../Models/Industry";
 import ResetFiltersButton from "./ResetFiltersButton";
 import FromToNumberInput from "./FromToNumberInput";
 
-function Filter() {
+interface FilterData {
+    from?: number | "";
+    to?: number | "";
+    industryKey?: number;
+    setFrom?: React.Dispatch<number | "">;
+    setTo?: React.Dispatch<number | "">;
+    setIndustryKey?: React.Dispatch<number>;
+    onConfirm?: () => void;
+}
+
+function Filter(data: FilterData) {
     let [industries, setIndustries] = useState(new Array<Industry>());
-    let [from, setFrom]
-        = useState<number | "">("");
-    let [to, setTo]
-        = useState<number | "">("");
-    let [industryKey, setIndustryKey] = useState(-1);
 
     function clearData() {
-        setIndustryKey(-1)
-        setFrom("")
-        setTo("")
+        data.setIndustryKey?.(-1)
+        data.setFrom?.("")
+        data.setTo?.("")
+        data.onConfirm?.();
     }
 
     return (
-        <Box w={"min(315px, 100%)"} bg={"white"} sx={(theme) => ({
-            borderRadius: "12px"
+        <Box maw={"620px"} w={"315px"} h={"max-content"} bg={"white"} sx={(theme) => ({
+            border: "1px solid #EAEBED",
+            borderRadius: "12px",
+            flexShrink: 0,
+            flexGrow: 1
         })}>
             <Box p={"lg"}>
                 <IndustryFetchLoader setIndustries={setIndustries} industries={industries}/>
@@ -38,18 +47,20 @@ function Filter() {
                     radius="8px"
                     rightSection={<IconChevronDown color={"rgba(172, 173, 185, 1)"}/>}
                     placeholder="Выберете отрасль"
-                    value={industryKey !== -1 ? industries.find(i => i.key === industryKey)!.trimmedTitle : null}
+                    value={data.industryKey !== -1 ? industries.find(i => i.key === data.industryKey)!.trimmedTitle
+                        : null}
                     data={industries.map((e) => e.trimmedTitle)}
                     onChange={(value) => {
-                        if (!value) setIndustryKey(-1)
-                        else setIndustryKey(industries.find(i => i.trimmedTitle === value)!.key)
+                        if (!value) data.setIndustryKey?.(-1)
+                        else data.setIndustryKey?.(industries.find(i => i.trimmedTitle === value)!.key)
                     }}
                     styles={{rightSection: {"pointerEvents": "none"}}}
                 />
                 <Space h={"lg"}/>
-                <FromToNumberInput title={"Оклад"} from={from} to={to} onFromChange={setFrom} onToChange={setTo} min={0}/>
+                <FromToNumberInput title={"Оклад"} from={data.from} to={data.to} onFromChange={data.setFrom}
+                                   onToChange={data.setTo} min={0}/>
                 <Space h={"lg"}/>
-                <Button w={"100%"} bg={"rgba(94, 150, 252, 1)"} radius={"8px"}>
+                <Button w={"100%"} bg={"rgba(94, 150, 252, 1)"} radius={"8px"} onClick={data.onConfirm}>
                     Применить
                 </Button>
             </Box>

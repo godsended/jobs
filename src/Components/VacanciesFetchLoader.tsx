@@ -18,6 +18,7 @@ interface VacanciesFetchLoaderData {
 
 function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
     let [accessToken, setAccessToken] = useState("");
+    let requestVersion = 0;
     authorizationStorage.subscribe(() => {
         setAccessToken(authorizationStorage.getAccessToken());
     })
@@ -39,7 +40,12 @@ function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
         }
 
         const makeRequest = async () => {
+            requestVersion += 1;
+            const currVersion = requestVersion;
             let responseData = await (await fetch(vacanciesRoute, query, {})).json();
+            if(requestVersion !== currVersion)
+                return;
+
             data.setTotal?.(responseData.total);
             let vacancies: Array<Vacancy> = [];
             responseData.objects.forEach((o: any) => {

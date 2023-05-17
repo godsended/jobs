@@ -1,7 +1,7 @@
 import React from "react";
-import Vacancy from "../Models/Vacancy";
 import {Anchor, Center, Flex, Image, Skeleton, Stack, Text, Title} from "@mantine/core";
 import PaymentText from "./PaymentText";
+import {NavLink} from "react-router-dom";
 
 interface VacancyItemData {
     vacancyId?: number;
@@ -32,7 +32,14 @@ function VacancyItem(data: VacancyItemData) {
                 <Title h={"20px"} size={"20px"} inline sx={(theme) => ({
                     overflow: "hidden"
                 })}>
-                    <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>{data.catalogueTitle}</Anchor>
+                    {data.vacancyId === undefined ? data.catalogueTitle :
+                        <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>
+                            <NavLink to={"/vacancy/" + data.vacancyId}
+                                     style={{color: 'inherit', textDecoration: 'inherit'}}>
+                                {data.catalogueTitle}
+                            </NavLink>
+                        </Anchor>
+                    }
                 </Title>
                 <Flex gap={"xs"}>
                     <PaymentText from={data.paymentFrom} to={data.paymentTo} currency={data.currency}/>
@@ -40,7 +47,7 @@ function VacancyItem(data: VacancyItemData) {
                     <Text inline>{data.typeOfWork}</Text>
                 </Flex>
                 <Flex gap={"xs"}>
-                    <Center><Image height={"1em"} width={"auto"} src={"loc.png"}/></Center>
+                    <Center><Image height={"1em"} width={"auto"} src={"/loc.png"}/></Center>
                     <Text inline>{data.town}</Text>
                 </Flex>
             </>}

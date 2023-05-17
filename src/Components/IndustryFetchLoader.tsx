@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction, useEffect, useLayoutEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {authorizationStorage} from "../storages";
 import DefaultHeaderedFetch from "../Services/DefaultHeaderedFetch";
 import {industriesRoute} from "../apiRoutes";
@@ -11,7 +11,7 @@ interface IndustryFetchLoaderData {
 }
 
 function IndustryFetchLoader(data: IndustryFetchLoaderData) {
-    let [accessToken, setAccessToken] = useState("");
+    let [accessToken, setAccessToken] = useState(authorizationStorage.getAccessToken());
     authorizationStorage.subscribe(() => {
         setAccessToken(authorizationStorage.getAccessToken());
     })

@@ -17,7 +17,7 @@ interface VacanciesFetchLoaderData {
 }
 
 function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
-    let [accessToken, setAccessToken] = useState("");
+    let [accessToken, setAccessToken] = useState(authorizationStorage.getAccessToken());
     let requestVersion = 0;
     authorizationStorage.subscribe(() => {
         setAccessToken(authorizationStorage.getAccessToken());

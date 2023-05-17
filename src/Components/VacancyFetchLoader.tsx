@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {authorizationStorage} from "../storages";
-import HeaderedFetch from "../Services/Interfaces/HeaderedFetch";
-import DefaultHeaderedFetch from "../Services/DefaultHeaderedFetch";
+import HeaderedFetch from "../Models/Services/Interfaces/HeaderedFetch";
+import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
 import {vacancyRoute} from "../apiRoutes";
 import Vacancy from "../Models/Vacancy";
 

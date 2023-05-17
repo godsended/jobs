@@ -3,7 +3,7 @@ import './App.css';
 import Auth from "./Components/Auth";
 import SearchPage from "./Pages/SearchPage";
 import {AppShell, Center, Container, Header} from "@mantine/core";
-import HeaderContent from "./Components/HeaderContent/HeaderContent";
+import HeaderContent from "./Components/HeaderContent";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import VacancyPage from "./Pages/VacancyPage";
 
@@ -14,14 +14,16 @@ function App() {
                 styles={(theme) => ({
                     main: {backgroundColor: "rgb(247, 247, 248)"}
                 })}
-                header={<Header height={84}>{
-                    <Container px={"xs"} m={"auto"} h={"inherit"}>
-                        <Center h={"inherit"}>
-                            <HeaderContent/>
-                        </Center>
-                        <img className={"header-logo"} srcSet={"/logo.png"} alt={"Jobored"}/>
-                    </Container>
-                }</Header>}>
+                header={
+                    <Header height={84}>
+                        <Container px={"xs"} m={"auto"} h={"inherit"}>
+                            <Center h={"inherit"}>
+                                <HeaderContent/>
+                            </Center>
+                            <img className={"header-logo"} srcSet={"/logo.png"} alt={"Jobored"}/>
+                        </Container>
+                    </Header>
+                }>
                 <Auth/>
                 <Routes>
                     <Route path={"/"} element={<SearchPage/>}/>

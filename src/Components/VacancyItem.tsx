@@ -22,35 +22,38 @@ function VacancyItem(data: VacancyItemData) {
             border: "1px solid #EAEBED",
             borderRadius: "12px"
         })}>
-            {data.isLoading ? (
-                <>
+            {data.isLoading ?
+                (<>
                     <Skeleton height={"20px"} radius={0}/>
                     <Skeleton height={"1em"} radius={0}/>
                     <Skeleton width={"30%"} height={"1em"} radius={0}/>
+                </>) :
+                <>
+                    <Title h={"20px"} size={"20px"} inline sx={_ => ({
+                        overflow: "hidden"
+                    })}>
+                        {
+                            data.vacancyId === undefined
+                                ? data.catalogueTitle :
+                                <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>
+                                    <NavLink to={"/vacancy/" + data.vacancyId}
+                                             style={{color: 'inherit', textDecoration: 'inherit'}}>
+                                        {data.catalogueTitle}
+                                    </NavLink>
+                                </Anchor>
+                        }
+                    </Title>
+                    <Flex gap={"xs"}>
+                        <PaymentText from={data.paymentFrom} to={data.paymentTo} currency={data.currency}/>
+                        <Text inline fw={700}>•</Text>
+                        <Text inline>{data.typeOfWork}</Text>
+                    </Flex>
+                    <Flex gap={"xs"}>
+                        <Center><Image height={"1em"} width={"auto"} src={"/loc.png"}/></Center>
+                        <Text inline>{data.town}</Text>
+                    </Flex>
                 </>
-            ) : <>
-                <Title h={"20px"} size={"20px"} inline sx={(theme) => ({
-                    overflow: "hidden"
-                })}>
-                    {data.vacancyId === undefined ? data.catalogueTitle :
-                        <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>
-                            <NavLink to={"/vacancy/" + data.vacancyId}
-                                     style={{color: 'inherit', textDecoration: 'inherit'}}>
-                                {data.catalogueTitle}
-                            </NavLink>
-                        </Anchor>
-                    }
-                </Title>
-                <Flex gap={"xs"}>
-                    <PaymentText from={data.paymentFrom} to={data.paymentTo} currency={data.currency}/>
-                    <Text inline fw={700}>•</Text>
-                    <Text inline>{data.typeOfWork}</Text>
-                </Flex>
-                <Flex gap={"xs"}>
-                    <Center><Image height={"1em"} width={"auto"} src={"/loc.png"}/></Center>
-                    <Text inline>{data.town}</Text>
-                </Flex>
-            </>}
+            }
         </Stack>
     )
 }

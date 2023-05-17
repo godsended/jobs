@@ -19,7 +19,7 @@ interface FilterData {
 function Filter(data: FilterData) {
     let [industries, setIndustries] = useState(new Array<Industry>());
 
-    function clearData() {
+    const clearData = () => {
         data.setIndustryKey?.(-1)
         data.setFrom?.("")
         data.setTo?.("")
@@ -27,7 +27,7 @@ function Filter(data: FilterData) {
     }
 
     return (
-        <Box maw={"620px"} w={"315px"} h={"max-content"} bg={"white"} sx={(theme) => ({
+        <Box maw={"620px"} w={"315px"} h={"max-content"} bg={"white"} sx={_ => ({
             border: "1px solid #EAEBED",
             borderRadius: "12px",
             flexShrink: 0,
@@ -35,20 +35,28 @@ function Filter(data: FilterData) {
         })}>
             <Box p={"lg"}>
                 <IndustryFetchLoader setIndustries={setIndustries} industries={industries}/>
+
                 <Flex justify={"space-between"}>
                     <Title inline size={"20px"}>Фильтры</Title>
                     <ResetFiltersButton onClick={clearData}>
                         Сбросить всё
                     </ResetFiltersButton>
                 </Flex>
+
                 <Space h={"xl"}/>
+
                 <Select
                     label={<Title order={5}>Отрасль</Title>}
                     radius="8px"
-                    rightSection={<IconChevronDown color={"rgba(172, 173, 185, 1)"}/>}
+                    rightSection={
+                        <IconChevronDown color={"rgba(172, 173, 185, 1)"}/>
+                    }
                     placeholder="Выберете отрасль"
-                    value={data.industryKey !== -1 ? industries.find(i => i.key === data.industryKey)!.trimmedTitle
-                        : null}
+                    value={
+                        data.industryKey !== -1
+                            ? industries.find(i => i.key === data.industryKey)!.trimmedTitle
+                            : null
+                    }
                     data={industries.map((e) => e.trimmedTitle)}
                     onChange={(value) => {
                         if (!value) data.setIndustryKey?.(-1)
@@ -56,7 +64,9 @@ function Filter(data: FilterData) {
                     }}
                     styles={{rightSection: {"pointerEvents": "none"}}}
                 />
+
                 <Space h={"lg"}/>
+
                 <FromToNumberInput title={"Оклад"} from={data.from} to={data.to} onFromChange={data.setFrom}
                                    onToChange={data.setTo} min={0}/>
                 <Space h={"lg"}/>

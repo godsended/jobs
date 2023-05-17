@@ -1,6 +1,5 @@
 import React from "react";
-import {Anchor, Center, Flex, Image, Space, Text} from "@mantine/core";
-import "./HeaderContent.css"
+import {Anchor, Center, Flex} from "@mantine/core";
 import {NavLink, useLocation} from "react-router-dom";
 
 function HeaderContent() {

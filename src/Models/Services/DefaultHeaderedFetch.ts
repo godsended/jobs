@@ -1,5 +1,5 @@
 import HeaderedFetch from "./Interfaces/HeaderedFetch";
-import {authenticationStorage, authorizationStorage} from "../storages";
+import {authenticationStorage, authorizationStorage} from "../../storages";
 
 class DefaultHeaderedFetch implements HeaderedFetch {
     fetch(url: string, query: any, body: any): Promise<Response> {

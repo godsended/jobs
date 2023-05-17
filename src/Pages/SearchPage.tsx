@@ -3,17 +3,21 @@ import Filter from "../Components/Filter";
 import {Center, Container, Flex, Pagination, Stack} from "@mantine/core";
 import VacancySearch from "../Components/VacancySearch";
 import VacanciesList from "../Components/VacanciesList";
+import Vacancy from "../Models/Vacancy";
+import VacanciesFetchLoader from "../Components/VacanciesFetchLoader";
 
 function SearchPage() {
-    let [page, setPage] = useState(1);
-    let [total, setTotal] = useState(0);
-    let [paymentFrom, setPaymentFrom] = useState<"" | number>("");
-    let [paymentTo, setPaymentTo] = useState<"" | number>("");
-    let [industryKey, setIndustryKey] = useState<number>(-1);
-    let [filtersVersion, setFiltersVersion] = useState(0);
-    let [keyword, setKeyword] = useState<string | undefined>("");
+    const [page, setPage] = useState(1);
+    const [total, setTotal] = useState(0);
+    const [paymentFrom, setPaymentFrom] = useState<"" | number>("");
+    const [paymentTo, setPaymentTo] = useState<"" | number>("");
+    const [industryKey, setIndustryKey] = useState<number>(-1);
+    const [filtersVersion, setFiltersVersion] = useState(0);
+    const [keyword, setKeyword] = useState<string | undefined>("");
+    const [vacancies, setVacancies] = useState<Array<Vacancy>>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-    let onFiltersConfirm = () => {
+    const onFiltersConfirm = () => {
         setFiltersVersion(filtersVersion + 1);
         setPage(1);
     }
@@ -22,16 +26,19 @@ function SearchPage() {
 
     return (
         <Container px={"xs"}>
+            <VacanciesFetchLoader setTotal={setTotal} page={page} setVacancies={setVacancies}
+                                  paymentFrom={paymentFrom} paymentTo={paymentTo}
+                                  industryKey={industryKey} filtersVersion={filtersVersion}
+                                  keyword={keyword} setIsLoading={setIsLoading}/>
+
             <Flex justify={"center"} gap={"md"} wrap={"wrap"}>
                 <Filter from={paymentFrom} to={paymentTo} industryKey={industryKey}
                         setFrom={setPaymentFrom} setTo={setPaymentTo} setIndustryKey={setIndustryKey}
                         onConfirm={onFiltersConfirm}/>
-                <Stack maw={"620px"} sx={(theme) => ({
-                    flexGrow: 100
-                })}>
+
+                <Stack maw={"620px"} sx={_ => ({flexGrow: 100})}>
                     <VacancySearch keyword={keyword} setKeyword={setKeyword} onSubmit={onFiltersConfirm}/>
-                    <VacanciesList setTotal={setTotal} page={page - 1} paymentFrom={paymentFrom} paymentTo={paymentTo}
-                                   industryKey={industryKey} keyword={keyword} filtersVersion={filtersVersion}/>
+                    <VacanciesList vacancies={vacancies} isLoading={isLoading}/>
                     <Center>
                         <Pagination total={getTotalPages()} onChange={setPage} value={page}/>
                     </Center>

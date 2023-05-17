@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {authorizationStorage} from "../storages";
-import DefaultHeaderedFetch from "../Services/DefaultHeaderedFetch";
+import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
 import {industriesRoute} from "../apiRoutes";
-import HeaderedFetch from "../Services/Interfaces/HeaderedFetch";
+import HeaderedFetch from "../Models/Services/Interfaces/HeaderedFetch";
 import Industry from "../Models/Industry";
 
 interface IndustryFetchLoaderData {

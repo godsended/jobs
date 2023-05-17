@@ -1,40 +1,33 @@
-import React, {useState} from "react";
+import React from "react";
 import VacancyItem from "./VacancyItem";
-import {Stack} from "@mantine/core";
-import VacanciesFetchLoader from "./VacanciesFetchLoader";
+import {Center, Stack} from "@mantine/core";
 import Vacancy from "../Models/Vacancy";
 
 interface VacanciesListData {
-    setTotal?: React.Dispatch<number>;
-    page?: number;
-    paymentFrom?: number | "";
-    paymentTo?: number | "";
-    industryKey?: number;
-    filtersVersion?: number;
-    keyword?: string;
+    vacancies: Array<Vacancy>;
+    isLoading?: boolean;
 }
 
 function VacanciesList(data: VacanciesListData) {
-    let [vacancies, setVacancies] = useState<Array<Vacancy>>([]);
+    let stackData: React.ReactNode = "";
+    if (data.isLoading) {
+        stackData = ["vac_pre_0", "vac_pre_1", "vac_pre_2", "vac_pre_3"].map(id =>
+            <VacancyItem key={id} isLoading={true}/>
+        )
+    } else if (data.vacancies.length === 0) {
+        stackData = <Center>"Нет подходящих вакансий :("</Center>
+    } else {
+        stackData = data.vacancies.map(v =>
+            <VacancyItem key={v.vacancyId} catalogueTitle={v.catalogueTitle} vacancyId={v.vacancyId}
+                         vacancyDescription={v.vacancyDescription} currency={v.currency} firmName={v.firmName}
+                         paymentFrom={v.paymentFrom} paymentTo={v.paymentTo} town={v.town}
+                         typeOfWork={v.typeOfWork}/>
+        )
+    }
 
     return (
         <Stack w={"100%"}>
-            <>
-                <VacanciesFetchLoader setTotal={data.setTotal} page={data.page} setVacancies={setVacancies}
-                                      paymentFrom={data.paymentFrom} paymentTo={data.paymentTo}
-                                      industryKey={data.industryKey} filtersVersion={data.filtersVersion}
-                                      keyword={data.keyword}/>
-                {vacancies.length > 0 ? vacancies.map(v =>
-                        <VacancyItem key={v.vacancyId} catalogueTitle={v.catalogueTitle} vacancyId={v.vacancyId}
-                                     vacancyDescription={v.vacancyDescription} currency={v.currency} firmName={v.firmName}
-                                     paymentFrom={v.paymentFrom} paymentTo={v.paymentTo} town={v.town}
-                                     typeOfWork={v.typeOfWork}/>
-                    )
-                    : ["vacancy_preloader_0", "vacancy_preloader_1", "vacancy_preloader_2", "vacancy_preloader_3"]
-                        .map(id =>
-                            <VacancyItem key={id} isLoading={true}/>
-                        )}
-            </>
+            {stackData}
         </Stack>
     )
 }

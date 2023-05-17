@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultHeaderedFetch from "../Services/DefaultHeaderedFetch";
-import HeaderedFetch from "../Services/Interfaces/HeaderedFetch";
+import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
+import HeaderedFetch from "../Models/Services/Interfaces/HeaderedFetch";
 import {passwordAuthRoute} from "../apiRoutes";
 import {authenticationStorage, authorizationStorage} from "../storages";
 

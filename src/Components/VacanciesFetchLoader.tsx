@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {authorizationStorage} from "../storages";
-import HeaderedFetch from "../Services/Interfaces/HeaderedFetch";
-import DefaultHeaderedFetch from "../Services/DefaultHeaderedFetch";
+import HeaderedFetch from "../Models/Services/Interfaces/HeaderedFetch";
+import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
 import {vacanciesRoute} from "../apiRoutes";
 import Vacancy from "../Models/Vacancy";
 
@@ -14,6 +14,7 @@ interface VacanciesFetchLoaderData {
     setVacancies?: React.Dispatch<Array<Vacancy>>;
     filtersVersion?: number;
     keyword?: string;
+    setIsLoading?: React.Dispatch<boolean>;
 }
 
 function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
@@ -62,8 +63,10 @@ function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
                 vacancies.push(vacancy);
             })
             data.setVacancies?.(vacancies);
+            data.setIsLoading?.(false);
         }
 
+        data.setIsLoading?.(true);
         makeRequest().catch(console.error);
 
         return () => data.setVacancies?.([]);

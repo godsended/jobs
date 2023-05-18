@@ -5,6 +5,7 @@ interface FeaturedStorage {
     getAll(): Array<string>;
     add(id: string): void;
     add(ids: Array<string>): void;
+    subscribe(callback: () => void): void;
     saveChanges(): void;
 }
 

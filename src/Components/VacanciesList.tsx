@@ -21,7 +21,7 @@ function VacanciesList(data: VacanciesListData) {
             <VacancyItem key={v.vacancyId} catalogueTitle={v.catalogueTitle} vacancyId={v.vacancyId}
                          vacancyDescription={v.vacancyDescription} currency={v.currency} firmName={v.firmName}
                          paymentFrom={v.paymentFrom} paymentTo={v.paymentTo} town={v.town}
-                         typeOfWork={v.typeOfWork}/>
+                         typeOfWork={v.typeOfWork} isLink={true}/>
         )
     }
 

@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Vacancy from "../Models/Vacancy";
 import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
 import {vacancyRoute} from "../apiRoutes";
-import vacancy from "../Models/Vacancy";
+import {vacanciesStorage} from "../storages";
 
 interface FeaturedVacanciesFetchLoaderData {
     setVacancies?: React.Dispatch<Array<Vacancy>>;
@@ -20,7 +20,10 @@ function FeaturedVacanciesFetchLoader(data: FeaturedVacanciesFetchLoaderData) {
 
         let vacancies = new Array<Vacancy>();
         data.setIsLoading?.(true);
-        let requests = data.ids.map(id => fetch(vacancyRoute + id, {}, {}).then(r => r.json()));
+        let storedVacancies: Array<Vacancy> = data.ids.map(id => vacanciesStorage.get(id)!).filter(v => !!v);
+        let unstoredVacanciesIds = data.ids.filter(id => storedVacancies.findIndex(v => v?.vacancyId.toString() === id)
+            < 0)
+        let requests = unstoredVacanciesIds.map(id => fetch(vacancyRoute + id, {}, {}).then(r => r.json()));
         Promise.all(requests).then(values => {
             values.forEach(value => {
                 vacancies.push({
@@ -35,7 +38,8 @@ function FeaturedVacanciesFetchLoader(data: FeaturedVacanciesFetchLoaderData) {
                     typeOfWork: value["type_of_work"].title
                 });
             })
-            data.setVacancies?.(vacancies);
+            vacancies.forEach(v => vacanciesStorage.add(v));
+            data.setVacancies?.(vacancies.concat(storedVacancies));
             data.setIsLoading?.(false);
         });
     }, [data.ids])

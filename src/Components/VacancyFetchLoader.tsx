@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {authorizationStorage} from "../storages";
+import {authorizationStorage, vacanciesStorage} from "../storages";
 import HeaderedFetch from "../Models/Services/Interfaces/HeaderedFetch";
 import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
 import {vacancyRoute} from "../apiRoutes";
@@ -25,9 +25,16 @@ function VacancyFetchLoader(data: VacancyFetchLoaderData) {
         }
 
         const makeRequest = async () => {
+            let storedVacancy = vacanciesStorage.get(data.id);
+            if(storedVacancy) {
+                data.setVacancy(storedVacancy);
+                data.setIsLoading(false);
+                return;
+            }
+
             let responseData = await (await fetch(vacancyRoute + data.id, {}, {})).json();
             let vacancy: Vacancy = {
-                vacancyId: responseData.id,
+                vacancyId: Number.parseInt(data.id) ?? responseData.id,
                 town: responseData.town.title,
                 catalogueTitle: responseData.profession,
                 currency: responseData.currency,
@@ -40,6 +47,7 @@ function VacancyFetchLoader(data: VacancyFetchLoaderData) {
 
             data.setVacancy(vacancy);
             data.setIsLoading(false);
+            vacanciesStorage.add(vacancy);
         }
 
         data.setIsLoading(true);

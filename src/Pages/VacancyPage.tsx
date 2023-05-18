@@ -17,7 +17,7 @@ function VacancyPage() {
             <Stack>
                 <VacancyItem town={vacancy.town} catalogueTitle={vacancy.catalogueTitle} typeOfWork={vacancy.typeOfWork}
                              paymentTo={vacancy.paymentTo} paymentFrom={vacancy.paymentFrom} currency={vacancy.currency}
-                             isLoading={isLoading}/>
+                             isLoading={isLoading} vacancyId={Number.parseInt(id!)} isLink={false}/>
                 {isLoading ?
                     <Center>
                         <Loader variant={"bars"} size={"xl"}/>

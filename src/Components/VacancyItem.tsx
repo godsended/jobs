@@ -17,6 +17,7 @@ interface VacancyItemData {
     currency?: string | null;
     vacancyDescription?: string | null;
     isLoading?: boolean;
+    isLink?: boolean;
 }
 
 function VacancyItem(data: VacancyItemData) {
@@ -50,7 +51,7 @@ function VacancyItem(data: VacancyItemData) {
                             overflow: "hidden"
                         })}>
                             {
-                                data.vacancyId === undefined
+                                !data.isLink
                                     ? data.catalogueTitle :
                                     <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>
                                         <NavLink to={"/vacancy/" + data.vacancyId}

@@ -15,9 +15,19 @@ function FeaturedPage() {
     useEffect(() => {
         setIds(featuredVacanciesStorage.getAll().slice(Math.min((page-1) * 4, total),
             Math.min(page * 4, total)));
-    }, [page])
+    }, [page, total])
 
     const getTotalPages = () => Math.ceil(Math.min(total / 4, 125));
+
+    const onFeaturedChanged = () => {
+        let newTotal = featuredVacanciesStorage.getAll().length;
+        setTotal(newTotal);
+        let newMaxPages = Math.ceil(Math.min(newTotal / 4, 125));
+        if(page >= newMaxPages)
+            setPage(newMaxPages);
+    }
+
+    featuredVacanciesStorage.subscribe(onFeaturedChanged);
 
     return (
         <>

@@ -14,6 +14,7 @@ interface VacanciesFetchLoaderData {
     setVacancies?: React.Dispatch<Array<Vacancy>>;
     filtersVersion?: number;
     keyword?: string;
+    ids?: Array<string>;
     setIsLoading?: React.Dispatch<boolean>;
 }
 
@@ -33,11 +34,12 @@ function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
         let query = {
             published: 1,
             count: 4,
-            keyword: data.keyword,
-            page: data.page,
-            "payment_from": data.paymentFrom,
-            "payment_to": data.paymentTo,
-            catalogues: data.industryKey === -1 ? undefined : data.industryKey
+            keyword: data.keyword ?? "",
+            page: data.page ?? "",
+            ids: data.ids ?? "",
+            "payment_from": data.paymentFrom ?? "",
+            "payment_to": data.paymentTo ?? "",
+            catalogues: data.industryKey === -1 ? "" : data.industryKey
         }
 
         const makeRequest = async () => {

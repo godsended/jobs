@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {Anchor, Center, Flex, Image, Skeleton, Stack, Text, Title} from "@mantine/core";
 import PaymentText from "./PaymentText";
 import {NavLink} from "react-router-dom";
+import ImageCheckbox from "./ImageCheckbox";
+import Vacancy from "../Models/Vacancy";
+import {featuredVacanciesStorage} from "../storages";
 
 interface VacancyItemData {
     vacancyId?: number;
@@ -17,6 +20,19 @@ interface VacancyItemData {
 }
 
 function VacancyItem(data: VacancyItemData) {
+    const [featured, setFeatured] = useState(featuredVacanciesStorage.has((data.vacancyId ?? "").toString()));
+
+    const onFeaturedToggled = (value: boolean) => {
+        setFeatured(value);
+        if (data.vacancyId) {
+            if (value)
+                featuredVacanciesStorage.add(data.vacancyId.toString());
+            else featuredVacanciesStorage.remove(data.vacancyId.toString());
+
+            featuredVacanciesStorage.saveChanges();
+        }
+    }
+
     return (
         <Stack spacing={"md"} bg={"white"} p={"1.3em"} sx={(theme) => ({
             border: "1px solid #EAEBED",
@@ -29,20 +45,25 @@ function VacancyItem(data: VacancyItemData) {
                     <Skeleton width={"30%"} height={"1em"} radius={0}/>
                 </>) :
                 <>
-                    <Title h={"20px"} size={"20px"} inline sx={_ => ({
-                        overflow: "hidden"
-                    })}>
-                        {
-                            data.vacancyId === undefined
-                                ? data.catalogueTitle :
-                                <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>
-                                    <NavLink to={"/vacancy/" + data.vacancyId}
-                                             style={{color: 'inherit', textDecoration: 'inherit'}}>
-                                        {data.catalogueTitle}
-                                    </NavLink>
-                                </Anchor>
-                        }
-                    </Title>
+                    <Flex justify={"space-between"} h={"20px"}>
+                        <Title size={"20px"} inline sx={_ => ({
+                            overflow: "hidden"
+                        })}>
+                            {
+                                data.vacancyId === undefined
+                                    ? data.catalogueTitle :
+                                    <Anchor inline underline={false} color={"rgba(94, 150, 252, 1)"}>
+                                        <NavLink to={"/vacancy/" + data.vacancyId}
+                                                 style={{color: 'inherit', textDecoration: 'inherit'}}>
+                                            {data.catalogueTitle}
+                                        </NavLink>
+                                    </Anchor>
+                            }
+                        </Title>
+                        <ImageCheckbox uncheckedSrc={"/star.png"} checkedSrc={"/star_filled.png"}
+                                       value={featured}
+                                       setValue={onFeaturedToggled}/>
+                    </Flex>
                     <Flex gap={"xs"}>
                         <PaymentText from={data.paymentFrom} to={data.paymentTo} currency={data.currency}/>
                         <Text inline fw={700}>•</Text>

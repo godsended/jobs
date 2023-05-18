@@ -6,6 +6,7 @@ import {AppShell, Center, Container, Header} from "@mantine/core";
 import HeaderContent from "./Components/HeaderContent";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import VacancyPage from "./Pages/VacancyPage";
+import FeaturedPage from "./Pages/FeaturedPage";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                 <Routes>
                     <Route path={"/"} element={<SearchPage/>}/>
                     <Route path={"/vacancy/:id"} element={<VacancyPage/>}/>
+                    <Route path={"/featured"} element={<FeaturedPage/>}/>
                 </Routes>
             </AppShell>
         </BrowserRouter>

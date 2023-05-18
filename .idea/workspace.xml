@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d0fb8c9-026f-47f0-902c-116427eef22e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/star_filled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/FeaturedVacanciesFetchLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ImageCheckbox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Services/Interfaces/FeaturedStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Services/LocalStorageFeaturedStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/FeaturedPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Auth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderContent/HeaderContent.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HeaderContent/HeaderContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HeaderContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/IndustryFetchLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/IndustryFetchLoader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/VacanciesFetchLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacanciesFetchLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/VacanciesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacanciesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/VacancyFetchLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacancyFetchLoader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/VacancyItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacancyItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/SearchPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SearchPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/DefaultHeaderedFetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/DefaultHeaderedFetch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EnvironmentAuthenticationStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/EnvironmentAuthenticationStorage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Interfaces/AuthenticationStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/Interfaces/AuthenticationStorage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Interfaces/AuthorisationStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/Interfaces/AuthorisationStorage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Interfaces/HeaderedFetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/Interfaces/HeaderedFetch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/LocalStorageAuthorisationStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/LocalStorageAuthorisationStorage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/storages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/storages.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,10 +66,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/Models" />
       <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/Pages" />
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/Services/" />
     </key>
   </component>
@@ -102,7 +96,8 @@
       <workItem from="1683293804298" duration="7622000" />
       <workItem from="1683445781883" duration="39547000" />
       <workItem from="1683832259016" duration="55485000" />
-      <workItem from="1684326967229" duration="8496000" />
+      <workItem from="1684326967229" duration="16310000" />
+      <workItem from="1684391673121" duration="11538000" />
     </task>
     <servers />
   </component>

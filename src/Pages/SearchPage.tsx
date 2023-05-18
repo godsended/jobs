@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Filter from "../Components/Filter";
 import {Center, Container, Flex, Pagination, Stack} from "@mantine/core";
 import VacancySearch from "../Components/VacancySearch";
 import VacanciesList from "../Components/VacanciesList";
 import Vacancy from "../Models/Vacancy";
 import VacanciesFetchLoader from "../Components/VacanciesFetchLoader";
+import {featuredVacanciesStorage} from "../storages";
 
 function SearchPage() {
     const [page, setPage] = useState(1);
@@ -22,7 +23,7 @@ function SearchPage() {
         setPage(1);
     }
 
-    let getTotalPages = () => Math.ceil(Math.min(total / 4, 125));
+    const getTotalPages = () => Math.ceil(Math.min(total / 4, 125));
 
     return (
         <Container px={"xs"}>

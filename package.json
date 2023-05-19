@@ -2,6 +2,7 @@
   "name": "jobs",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/godsended/jobs",
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@mantine/carousel": "^6.0.10",
@@ -29,6 +30,7 @@
     "@types/react-dom": "^18.2.1",
     "dayjs": "^1.11.7",
     "embla-carousel-react": "^7.1.0",
+    "gh-pages": "^5.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "qs": "^6.11.1",
@@ -43,6 +45,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-page -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d0fb8c9-026f-47f0-902c-116427eef22e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Models/Services/Interfaces/VacanciesStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Services/MemoVacanciesStorage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FeaturedVacanciesFetchLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FeaturedVacanciesFetchLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/VacanciesFetchLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacanciesFetchLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/VacancyFetchLoader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/VacancyFetchLoader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Services/Interfaces/FeaturedStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/Interfaces/FeaturedStorage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Services/LocalStorageFeaturedStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Services/LocalStorageFeaturedStorage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/FeaturedPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/FeaturedPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/VacancyPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/VacancyPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/storages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +63,17 @@
       <recent name="$PROJECT_DIR$/src/Services/" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.deploy">
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
@@ -79,6 +81,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -95,7 +102,9 @@
       <workItem from="1683445781883" duration="39547000" />
       <workItem from="1683832259016" duration="55485000" />
       <workItem from="1684326967229" duration="16310000" />
-      <workItem from="1684391673121" duration="16750000" />
+      <workItem from="1684391673121" duration="17717000" />
+      <workItem from="1684440851036" duration="1049000" />
+      <workItem from="1684511112229" duration="1779000" />
     </task>
     <servers />
   </component>

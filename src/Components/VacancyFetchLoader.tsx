@@ -54,6 +54,7 @@ function VacancyFetchLoader(data: VacancyFetchLoaderData) {
         makeRequest().catch(console.error);
 
         return () => data.setVacancy(new Vacancy());
+        // eslint-disable-next-line
     }, [accessToken])
 
     return (

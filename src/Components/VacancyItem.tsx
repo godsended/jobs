@@ -3,7 +3,6 @@ import {Anchor, Center, Flex, Image, Skeleton, Stack, Text, Title} from "@mantin
 import PaymentText from "./PaymentText";
 import {NavLink} from "react-router-dom";
 import ImageCheckbox from "./ImageCheckbox";
-import Vacancy from "../Models/Vacancy";
 import {featuredVacanciesStorage} from "../storages";
 
 interface VacancyItemData {

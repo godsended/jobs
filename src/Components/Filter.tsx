@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Box, Button, Flex, NumberInput, Select, Space, Text, Title} from "@mantine/core";
+import {Box, Button, Flex, Select, Space, Title} from "@mantine/core";
 import {IconChevronDown} from "@tabler/icons-react";
 import IndustryFetchLoader from "./IndustryFetchLoader";
 import Industry from "../Models/Industry";

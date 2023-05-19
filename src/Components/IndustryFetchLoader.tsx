@@ -39,7 +39,7 @@ function IndustryFetchLoader(data: IndustryFetchLoaderData) {
 
         return () => {
             data.setIndustries([]);
-        }
+        } // eslint-disable-next-line
     }, [accessToken, fetch])
     return (
         <>

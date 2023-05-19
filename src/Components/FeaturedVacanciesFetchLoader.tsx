@@ -42,6 +42,7 @@ function FeaturedVacanciesFetchLoader(data: FeaturedVacanciesFetchLoaderData) {
             data.setVacancies?.(vacancies.concat(storedVacancies));
             data.setIsLoading?.(false);
         });
+        // eslint-disable-next-line
     }, [data.ids])
     return (
         <>

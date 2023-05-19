@@ -1,5 +1,5 @@
 import React from "react";
-import {NumberInput, Title} from "@mantine/core";
+import {NumberInput} from "@mantine/core";
 
 interface StyledNumberInputData {
     placeholder?: string;

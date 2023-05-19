@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Filter from "../Components/Filter";
 import {Center, Container, Flex, Pagination, Stack} from "@mantine/core";
 import VacancySearch from "../Components/VacancySearch";
 import VacanciesList from "../Components/VacanciesList";
 import Vacancy from "../Models/Vacancy";
 import VacanciesFetchLoader from "../Components/VacanciesFetchLoader";
-import {featuredVacanciesStorage} from "../storages";
 
 function SearchPage() {
     const [page, setPage] = useState(1);

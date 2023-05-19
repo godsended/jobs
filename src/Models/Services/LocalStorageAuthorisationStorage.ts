@@ -1,5 +1,4 @@
 import AuthorisationStorage from "./Interfaces/AuthorisationStorage";
-import {subscribe} from "diagnostics_channel";
 
 export default class LocalStorageAuthorisationStorage implements AuthorisationStorage {
     private subscribers: Array<() => void> = new Array<() => void>();

@@ -4,7 +4,6 @@ import HeaderedFetch from "../Models/Services/Interfaces/HeaderedFetch";
 import DefaultHeaderedFetch from "../Models/Services/DefaultHeaderedFetch";
 import {vacanciesRoute} from "../apiRoutes";
 import Vacancy from "../Models/Vacancy";
-import vacancy from "../Models/Vacancy";
 
 interface VacanciesFetchLoaderData {
     setTotal?: React.Dispatch<number>;
@@ -44,6 +43,7 @@ function VacanciesFetchLoader(data: VacanciesFetchLoaderData) {
         }
 
         const makeRequest = async () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             requestVersion += 1;
             const currVersion = requestVersion;
             let responseData = await (await fetch(vacanciesRoute, query, {})).json();

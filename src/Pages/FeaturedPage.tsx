@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Center, Pagination, Stack} from "@mantine/core";
+import {Center, Container, Pagination, Stack} from "@mantine/core";
 import Vacancy from "../Models/Vacancy";
 import VacanciesList from "../Components/VacanciesList";
 import {featuredVacanciesStorage} from "../storages";
@@ -30,7 +30,7 @@ function FeaturedPage() {
     featuredVacanciesStorage.subscribe(onFeaturedChanged);
 
     return (
-        <>
+        <Container>
             <FeaturedVacanciesFetchLoader setVacancies={setVacancies} setIsLoading={setIsLoading} ids={ids}/>
             <Stack>
                 <VacanciesList vacancies={vacancies} isLoading={isLoading}/>
@@ -38,7 +38,7 @@ function FeaturedPage() {
                     <Pagination total={getTotalPages()} onChange={setPage} value={page}/>
                 </Center>
             </Stack>
-        </>
+        </Container>
     )
 }
 

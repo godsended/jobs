@@ -9,7 +9,7 @@ interface VacancySearchData {
 
 function VacancySearch(data: VacancySearchData) {
     let button =
-        <Button w={"6em"} bg={"rgba(94, 150, 252, 1)"} h={"2em"} radius={"8px"} onClick={data.onSubmit}>
+        <Button data-elem="search-button"  w={"6em"} bg={"rgba(94, 150, 252, 1)"} h={"2em"} radius={"8px"} onClick={data.onSubmit}>
             Поиск
         </Button>;
 
@@ -18,7 +18,8 @@ function VacancySearch(data: VacancySearchData) {
     }
 
     return (
-        <Input onSubmit={data.onSubmit}
+        <Input data-elem="search-input"
+               onSubmit={data.onSubmit}
                icon={
                    <Image height={"12.5px"} width={"12.5px"} src={"Search.png"}/>
                }

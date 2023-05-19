@@ -17,14 +17,16 @@ function FromToNumberInput(data: FromToNumberInputData) {
 
     return (
         <Box>
-            <StyledNumberInput label={labelElement} placeholder={"От"} value={data.from} min={data.min} max={data.max}
+            <StyledNumberInput elemType="salary-from-input"
+                               label={labelElement} placeholder={"От"} value={data.from} min={data.min} max={data.max}
                                onChange={(value) => {
                                    if (value > (data.to ?? 0))
                                        data.onToChange?.(value)
                                    data.onFromChange?.(value)
                                }}/>
             <Space h={"xs"}/>
-            <StyledNumberInput placeholder={"До"} value={data.to} min={data.min} max={data.max}
+            <StyledNumberInput elemType="salary-to-input"
+                placeholder={"До"} value={data.to} min={data.min} max={data.max}
                                onChange={(value) => {
                                    if (value < (data.from ?? 0))
                                        data.onFromChange?.(value)

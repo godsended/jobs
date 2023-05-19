@@ -35,7 +35,8 @@ function VacancyItem(data: VacancyItemData) {
     }
 
     return (
-        <Stack spacing={"md"} bg={"white"} p={"1.3em"} sx={(theme) => ({
+        <Stack data-elem={"vacancy-" + data.vacancyId}
+            spacing={"md"} bg={"white"} p={"1.3em"} sx={(theme) => ({
             border: "1px solid #EAEBED",
             borderRadius: "12px"
         })}>
@@ -61,7 +62,8 @@ function VacancyItem(data: VacancyItemData) {
                                     </Anchor>
                             }
                         </Title>
-                        <ImageCheckbox uncheckedSrc={"/star.png"} checkedSrc={"/star_filled.png"}
+                        <ImageCheckbox dataElem={"vacancy-" + data.vacancyId?.toString() + "-shortlist-button"}
+                                       uncheckedSrc={"/star.png"} checkedSrc={"/star_filled.png"}
                                        value={featured}
                                        setValue={onFeaturedToggled}/>
                     </Flex>

@@ -8,11 +8,13 @@ interface StyledNumberInputData {
     onChange?: React.Dispatch<number | "">;
     min?: number;
     max?: number;
+    elemType?: string;
 }
 
 function StyledNumberInput(data: StyledNumberInputData) {
     return(
         <NumberInput
+            data-elem={data.elemType}
             placeholder={data.placeholder}
             label={data.label}
             value={data.value}

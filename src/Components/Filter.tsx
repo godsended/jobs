@@ -45,7 +45,7 @@ function Filter(data: FilterData) {
 
                 <Space h={"xl"}/>
 
-                <Select
+                <Select data-elem="industry-select"
                     label={<Title order={5}>Отрасль</Title>}
                     radius="8px"
                     rightSection={
@@ -70,7 +70,8 @@ function Filter(data: FilterData) {
                 <FromToNumberInput title={"Оклад"} from={data.from} to={data.to} onFromChange={data.setFrom}
                                    onToChange={data.setTo} min={0}/>
                 <Space h={"lg"}/>
-                <Button w={"100%"} bg={"rgba(94, 150, 252, 1)"} radius={"8px"} onClick={data.onConfirm}>
+                <Button w={"100%"} bg={"rgba(94, 150, 252, 1)"} radius={"8px"} onClick={data.onConfirm}
+                        data-elem="search-button">
                     Применить
                 </Button>
             </Box>

@@ -6,6 +6,7 @@ interface ImageCheckboxData {
     value?: boolean;
     uncheckedSrc: string;
     checkedSrc: string;
+    dataElem?: string;
 }
 
 function ImageCheckbox(data: ImageCheckboxData) {
@@ -14,7 +15,7 @@ function ImageCheckbox(data: ImageCheckboxData) {
 
     return(
         <Box>
-            <Image onClick={onClick} src={calcSrc()}/>
+            <Image data-elem={data.dataElem} onClick={onClick} src={calcSrc()}/>
         </Box>
     )
 }

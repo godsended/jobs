@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/godsended/jobs/static/css/main.d372037e.css",
+    "main.js": "/godsended/jobs/static/js/main.ce9972a4.js",
+    "index.html": "/godsended/jobs/index.html",
+    "main.d372037e.css.map": "/godsended/jobs/static/css/main.d372037e.css.map",
+    "main.ce9972a4.js.map": "/godsended/jobs/static/js/main.ce9972a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d372037e.css",
+    "static/js/main.ce9972a4.js"
+  ]
+}

@@ -2,6 +2,7 @@ import React from "react";
 import VacancyItem from "./VacancyItem";
 import {Center, Stack} from "@mantine/core";
 import Vacancy from "../Models/Vacancy";
+import NotFoundView from "./NotFoundView";
 
 interface VacanciesListData {
     vacancies: Array<Vacancy>;
@@ -15,7 +16,9 @@ function VacanciesList(data: VacanciesListData) {
             <VacancyItem key={id} isLoading={true}/>
         )
     } else if (data.vacancies.length === 0) {
-        stackData = <Center>"Нет подходящих вакансий :("</Center>
+        stackData = <Center p={"xl"}>
+            <NotFoundView/>
+        </Center>
     } else {
         stackData = data.vacancies.map(v =>
             <VacancyItem key={v.vacancyId} catalogueTitle={v.catalogueTitle} vacancyId={v.vacancyId}
